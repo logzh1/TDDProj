@@ -41,6 +41,21 @@ namespace FizzBuzzTest
             string[] result = fb.Resolve(number);
             Assert.AreEqual(excepted, result);
         }
+
+
+
+        [TestCase(1, new string[] { "1" })]
+        [TestCase(2, new string[] { "1", "2" })]
+        [TestCase(3, new string[] { "1", "2", "fizz" })]
+        [TestCase(4, new string[] { "1", "2", "fizz", "4" })]
+        [TestCase(5, new string[] { "1", "2", "fizz", "4", "buzz" })]
+        [TestCase(15, new string[] { "1", "2", "fizz", "4", "buzz", "fizz", "7", "8", "fizz", "buzz", "11", "fizz", "fizz", "14", "fizz buzz" })]
+        public void InputNumber_ExceptiedResult_StringArray(int number, string[] excepted)
+        {
+            var fb = new FizzBuzz2();
+            var result = fb.Resolve(number);
+            Assert.AreEqual(excepted, result);
+        }
     }
 
 
