@@ -24,26 +24,23 @@ namespace FizzBuzzTest
     // 3 -> ["1", "2", "fizz"]
     // 4 -> ["1", "2", "fizz", 4]
     // 5 -> ["1", "2", "fizz", 4, "buzz"]
-    // 15 -> ["1", "2", "fizz", 4, "buzz", "fizz", "7", "8", "fizz", "buzz", "11","buzz", "11", "fizz", "13", "14", "fizz buzz" ]
+    // 15 -> [ "1", "2", "fizz", "4", "buzz", "fizz", "7", "8", "fizz", "buzz", "11", "fizz", "13", "14", "fizz buzz"]
 
     [TestFixture]
     public class FizzBuzzTest
     {
-        [TestCase(1, new string[] { "1"})]
+        [TestCase(1, new string[] {"1"})]
         [TestCase(2, new string[] {"1", "2"})]
         [TestCase(3, new string[] {"1", "2", "fizz"})]
         [TestCase(4, new string[] {"1", "2", "fizz", "4"})]
         [TestCase(5, new string[] {"1", "2", "fizz", "4", "buzz"})]
-        [TestCase(6, new string[] {"1", "2", "fizz", "4", "buzz", "fizz"})]
         [TestCase(15, new string[] { "1", "2", "fizz", "4", "buzz", "fizz", "7", "8", "fizz", "buzz", "11", "fizz", "13", "14", "fizz buzz" })]
-
-        public void TestInputValueExceptedResultString(int input, string[] excepted)
+        public void Input2_ExceptedResult_12(int number, string[] excepted)
         {
             var fb = new FizzBuzz.FizzBuzz();
-            var ttt = fb.Resolve(input);
-            Assert.AreEqual(excepted, ttt.ToArray());
+            string[] result = fb.Resolve(number);
+            Assert.AreEqual(excepted, result);
         }
-
     }
 
 

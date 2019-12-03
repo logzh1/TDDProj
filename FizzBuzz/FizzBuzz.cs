@@ -1,28 +1,29 @@
 ﻿
 using System.Collections.Generic;
+using System.Globalization;
 using System.Xml.XPath;
 
 namespace FizzBuzz
 {
     public class FizzBuzz
     {
-        public List<string> Resolve(int i)
+        public string[] Resolve(int number)
         {
-            var result = new List<string>();
-            for (int value = 1; value <= i; value++)
+            List<string> result = new List<string>();
+            for (int i = 1; i <= number; i++)
             {
-                var t = value.ToString();
-                if (value % 3 == 0)
+                var t = i.ToString();
+                if (i % 3 == 0)
                 {
-                    t = value % 5 == 0 ? "fizz buzz" : "fizz";
+                    t = i % 5 == 0 ? "fizz buzz" : "fizz";
                 }
-                else if (value % 5 == 0)
+                else if (i % 5 == 0)
                 {
                     t = "buzz";
                 }
                 result.Add(t);
             }
-            return result;
+            return result.ToArray();
         }
     }
 
